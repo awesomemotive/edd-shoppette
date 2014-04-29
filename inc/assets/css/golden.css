@@ -1,0 +1,61 @@
+/**
+ * primary design color 
+ */
+input[type="submit"],
+input[type="submit"]:hover,
+input[type="button"],
+input[type="button"]:hover,
+.main-menu-container,
+.main-navigation a:hover,
+.more-link,
+.single-post-footer,
+.bypostauthor .comment-author {
+	background: #529CAB;
+}
+.alert-bar .alert-message .fa:first-child,
+.entry-meta {
+	color: #529CAB;
+}
+
+
+		/**
+		 * primary design color - sidekick 
+		 */
+		.main-navigation ul li:hover > ul,
+		.main-navigation .menu > li > a:hover {
+			background: #488692;
+		}
+		
+		@media screen and (max-width: 768px) {
+			.main-navigation .menu a:hover {
+				background: #488692;
+			}
+		}
+		
+		input[type="submit"],
+		input[type="button"],
+		.more-link {
+			box-shadow: 0 3px #488692;
+		}
+		.main-menu-container,
+		.single-post-footer,
+		.bypostauthor .comment-author {
+			box-shadow: 0 5px #488692;
+		}
+		
+
+/**
+ * secondary color - accent 
+ */
+a,
+.header-menu a:hover,
+.entry-header a:hover,
+.comment-reply-link:hover,
+.widget:hover .widget-title:before,
+.product-title:hover,
+.view-details:hover {
+	color: #C2B041;
+}
+.header-area {
+	border-top: 3px solid #C2B041;
+}
