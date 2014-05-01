@@ -109,7 +109,8 @@ class SHOPPETTE_SL_Theme_Updater {
 				'license' 		=> $this->license,
 				'name' 			=> $this->item_name,
 				'slug' 			=> $this->theme_slug,
-				'author'		=> $this->author
+				'author'		=> $this->author,
+				'url'           => home_url()
 			);
 
 			$response = wp_remote_post( $this->remote_api_url, array( 'timeout' => 15, 'sslverify' => false, 'body' => $api_params ) );
@@ -153,17 +154,18 @@ class SHOPPETTE_SL_Theme_Updater {
 * the updater
 ***********************************************/
 
-$shoppette_license = trim( get_option( 'shoppette_license_key' ) );
+if ( is_admin() ) {
+	$shoppette_license = trim( get_option( 'shoppette_license_key' ) );
 
-$edd_updater = new SHOPPETTE_SL_Theme_Updater( array( 
-		'remote_api_url' 	=> SHOPPETTE_SL_STORE_URL,
-		'version' 			=> SHOPPETTE_VERSION,
-		'license' 			=> $shoppette_license,
-		'item_name' 		=> SHOPPETTE_DOWNLOAD_TITLE,
-		'author'			=> SHOPPETTE_AUTHOR
-	)
-);
-
+	$shoppette_updater = new SHOPPETTE_SL_Theme_Updater( array( 
+			'remote_api_url' 	=> SHOPPETTE_SL_STORE_URL,
+			'version' 			=> SHOPPETTE_VERSION,
+			'license' 			=> $shoppette_license,
+			'item_name' 		=> SHOPPETTE_DOWNLOAD_TITLE,
+			'author'			=> 'Sean Davis'
+		)
+	);
+}
 
 /***********************************************
 * add menu item
@@ -261,9 +263,10 @@ function shoppette_activate_license() {
 		$license = trim( get_option( 'shoppette_license_key' ) );
 
 		$api_params = array( 
-			'edd_action' => 'activate_license', 
-			'license' => $license, 
-			'item_name' => urlencode( SHOPPETTE_DOWNLOAD_TITLE ) 
+			'edd_action'	=> 'activate_license', 
+			'license'		=> $license, 
+			'item_name'		=> urlencode( SHOPPETTE_DOWNLOAD_TITLE ),
+			'url'			=> home_url() 
 		);
 
 		$response = wp_remote_get( add_query_arg( $api_params, SHOPPETTE_SL_STORE_URL ), array( 'timeout' => 15, 'sslverify' => false ) );
@@ -303,7 +306,8 @@ function shoppette_deactivate_license() {
 		$api_params = array( 
 			'edd_action'=> 'deactivate_license', 
 			'license' 	=> $license, 
-			'item_name' => urlencode( SHOPPETTE_DOWNLOAD_TITLE ) // the name of our product in EDD
+			'item_name' => urlencode( SHOPPETTE_DOWNLOAD_TITLE ),
+			'url'       => home_url()
 		);
 
 		// Call the custom API.
@@ -323,36 +327,3 @@ function shoppette_deactivate_license() {
 	}
 }
 add_action('admin_init', 'shoppette_deactivate_license');
-
-
-/***********************************************
-* is license valid?
-***********************************************/
-
-function shoppette_check_license() {
-
-	global $wp_version;
-
-	$license = trim( get_option( 'shoppette_license_key' ) );
-
-	$api_params = array( 
-		'edd_action' => 'check_license', 
-		'license' => $license, 
-		'item_name' => urlencode( SHOPPETTE_DOWNLOAD_TITLE ) 
-	);
-
-	$response = wp_remote_get( add_query_arg( $api_params, SHOPPETTE_SL_STORE_URL ), array( 'timeout' => 15, 'sslverify' => false ) );
-
-	if ( is_wp_error( $response ) )
-		return false;
-
-	$license_data = json_decode( wp_remote_retrieve_body( $response ) );
-
-	if( $license_data->license == 'valid' ) {
-		echo 'valid'; exit;
-		// this license is still valid
-	} else {
-		echo 'invalid'; exit;
-		// this license is no longer valid
-	}
-}
