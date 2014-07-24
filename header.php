@@ -11,7 +11,7 @@ $ping = get_bloginfo('pingback_url');
 <head>
 <meta charset="<?php echo $char; ?>">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title><?php wp_title( '' ); ?></title>
+<title><?php wp_title( '|', true, 'right' ); ?></title>
 <link rel="profile" href="http://gmpg.org/xfn/11">
 <link rel="pingback" href="<?php echo $ping; ?>">
 <?php wp_head(); ?>
