@@ -107,7 +107,7 @@ function shoppette_scripts() {
 	endif;
 	
 	// font awesome stylesheet
-	wp_enqueue_style( 'fontawesome', get_stylesheet_directory_uri() . '/inc/assets/fonts/font-awesome/css/font-awesome.min.css' );
+	wp_enqueue_style( 'fontawesome', get_template_directory_uri() . '/inc/assets/fonts/font-awesome/css/font-awesome.min.css' );
 	
 	// Google fonts
 	wp_enqueue_style( 'googlefonts', 'http://fonts.googleapis.com/css?family=Pacifico' );
