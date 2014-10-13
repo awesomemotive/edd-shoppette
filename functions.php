@@ -109,8 +109,8 @@ function shoppette_scripts() {
 	// font awesome stylesheet
 	wp_enqueue_style( 'fontawesome', get_template_directory_uri() . '/inc/assets/fonts/font-awesome/css/font-awesome.min.css' );
 	
-	// Google fonts
-	wp_enqueue_style( 'googlefonts', 'http://fonts.googleapis.com/css?family=Pacifico' );
+	// Google fonts - Pacifico & Open Sans
+	wp_enqueue_style( 'googlefonts', 'http://fonts.googleapis.com/css?family=Pacifico|Open+Sans:400italic,700italic,400,700' );
 	
 	// theme assets
 	wp_enqueue_script( 'shoppette-navigation', get_template_directory_uri() . '/inc/assets/js/navigation.js', array(), '20120206', true );
