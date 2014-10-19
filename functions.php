@@ -7,7 +7,7 @@
  * definitions
  */
 define( 'SHOPPETTE_NAME', 'Shoppette' );
-define( 'SHOPPETTE_VERSION', '1.0.2' );
+define( 'SHOPPETTE_VERSION', '1.0.3' );
 
 
 if ( ! function_exists( 'shoppette_setup' ) ) :

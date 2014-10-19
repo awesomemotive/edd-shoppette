@@ -106,11 +106,11 @@ function shoppette_customize_register( $wp_customize ) {
 		'type'      => 'checkbox',
 	) );
 	// alert bar text
-	$wp_customize->get_setting( 'shoppette_alert_bar_text' )->transport = 'postMessage';
 	$wp_customize->add_setting( 'shoppette_alert_bar_text', array( 
 		'default' => null,
 		'sanitize_callback' => 'shoppette_sanitize_link_text' 
 	) );
+	$wp_customize->get_setting( 'shoppette_alert_bar_text' )->transport = 'postMessage';
 	$wp_customize->add_control( 'shoppette_alert_bar_text', array(
 		'label'		=> __( 'Alert Bar Text (anchor tags allowed)', 'shoppette' ),
 		'section'	=> 'shoppette_content_section',
@@ -134,11 +134,11 @@ function shoppette_customize_register( $wp_customize ) {
 		),
 	) ) );
 	// read more link
-	$wp_customize->get_setting( 'shoppette_read_more' )->transport = 'postMessage';
 	$wp_customize->add_setting( 'shoppette_read_more', array(
 		'default' => __( 'Read More', 'shoppette' ),
 		'sanitize_callback' => 'shoppette_sanitize_text' 
-	) );		
+	) );
+	$wp_customize->get_setting( 'shoppette_read_more' )->transport = 'postMessage';
 	$wp_customize->add_control( 'shoppette_read_more', array(
 	    'label' 	=> __( 'Excerpt & More Link Text', 'shoppette' ),
 	    'section' 	=> 'shoppette_content_section',
@@ -190,11 +190,11 @@ function shoppette_customize_register( $wp_customize ) {
 		'type'      => 'checkbox',
 	) );
 	// credits & copyright
-	$wp_customize->get_setting( 'shoppette_credits_copyright' )->transport = 'postMessage';
 	$wp_customize->add_setting( 'shoppette_credits_copyright', array( 
 		'default' => null,
 		'sanitize_callback' => 'shoppette_sanitize_link_text' 
 	) );
+	$wp_customize->get_setting( 'shoppette_credits_copyright' )->transport = 'postMessage';
 	$wp_customize->add_control( 'shoppette_credits_copyright', array(
 		'label'		=> __( 'Footer Credits & Copyright', 'shoppette' ),
 		'section'	=> 'shoppette_content_section',
@@ -225,11 +225,11 @@ function shoppette_customize_register( $wp_customize ) {
 			'type'      => 'checkbox',
 		) );
 		// store front/downloads archive headline
-		$wp_customize->get_setting( 'shoppette_edd_store_archives_title' )->transport = 'postMessage';
 		$wp_customize->add_setting( 'shoppette_edd_store_archives_title', array( 
 			'default' => null,
 			'sanitize_callback' => 'shoppette_sanitize_text' 
 		) );
+		$wp_customize->get_setting( 'shoppette_edd_store_archives_title' )->transport = 'postMessage';
 		$wp_customize->add_control( 'shoppette_edd_store_archives_title', array(
 			'label'		=> __( 'Store Front Main Title', 'shoppette' ),
 			'section'	=> 'shoppette_edd_options',
@@ -256,11 +256,11 @@ function shoppette_customize_register( $wp_customize ) {
 			'type'      => 'checkbox',
 		) );
 		//  view details link
-		$wp_customize->get_setting( 'shoppette_product_view_details' )->transport = 'postMessage';
 		$wp_customize->add_setting( 'shoppette_product_view_details', array( 
 			'default' => __( 'View Full Details', 'shoppette' ),
 			'sanitize_callback' => 'shoppette_sanitize_text' 
 		) );
+		$wp_customize->get_setting( 'shoppette_product_view_details' )->transport = 'postMessage';
 		$wp_customize->add_control( 'shoppette_product_view_details', array(
 		    'label' 	=> __( 'Store Item Link Text', 'shoppette' ),
 		    'section' 	=> 'shoppette_edd_options',
