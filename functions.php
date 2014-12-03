@@ -177,17 +177,6 @@ add_filter( 'post_class', 'shoppette_first_post_class' );
 
 
 /** ===============
- * Only show regular posts in search results
- */
-function shoppette_search_filter( $query ) {
-	if ( $query->is_search && !is_admin() )
-		$query->set( 'post_type', 'post' );
-	return $query;
-}
-add_filter( 'pre_get_posts','shoppette_search_filter' );
-
-
-/** ===============
  * Allow comments on downloads
  */
 function shoppette_edd_add_comments_support( $supports ) {
