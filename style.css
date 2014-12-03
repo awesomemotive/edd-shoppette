@@ -1085,6 +1085,11 @@ input[type=submit].edd-submit {
 #edd_checkout_cart {
 	margin-bottom: 0;
 }
+.edd-template #edd_checkout_cart input[type="number"].edd-item-quantity {
+	display: inline-block;
+	background: #f1f1f1;
+	padding: 2px 6px;
+}
 .edd-checkout-template #edd_checkout_form_wrap,
 .edd-history-template #content,
 .edd-confirmation-template #content,
@@ -1211,6 +1216,26 @@ input[type=submit].edd-submit {
 #edd_checkout_cart td, 
 #edd_checkout_cart th {
 	border-color: #f1f1f1; 
+}
+.edd_download_purchase_form .edd_download_quantity_wrapper {
+	margin: 6px 0;
+}
+.edd_download_purchase_form .edd_multi_mode .edd_download_quantity_wrapper {
+	padding-left: 16px;
+}
+.edd_multi_mode .edd_download_quantity_wrapper .edd_price_option_sep {
+	display: none;
+}
+.edd_download_purchase_form .edd_multi_mode .edd_download_quantity_wrapper:before {
+	color: #d8d8d8;
+	font-family: "FontAwesome";
+	content: "\f00d";
+	margin: 0 5px 0 2px;
+}
+.edd_download_purchase_form .edd_download_quantity_wrapper .edd-item-quantity {
+	width: 60px;
+	padding: 6px;
+	font-size: 80%;
 }
 
 
