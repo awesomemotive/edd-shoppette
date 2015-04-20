@@ -2,12 +2,12 @@
 /**
  * functions and definitions
  */
- 
+
 /**
  * definitions
  */
 define( 'SHOPPETTE_NAME', 'Shoppette' );
-define( 'SHOPPETTE_VERSION', '1.0.4' );
+define( 'SHOPPETTE_VERSION', '1.0.5' );
 
 
 if ( ! function_exists( 'shoppette_setup' ) ) :
@@ -21,7 +21,7 @@ if ( ! function_exists( 'shoppette_setup' ) ) :
 function shoppette_setup() {
 
 	// keep the media in check
-	if ( ! isset( $content_width ) ) $content_width = 700; 
+	if ( ! isset( $content_width ) ) $content_width = 700;
 
 	/*
 	 * Make theme available for translation.
@@ -35,7 +35,7 @@ function shoppette_setup() {
 	/*
 	 * Enable support for Post Thumbnails on posts and pages.
 	 */
-	add_theme_support( 'post-thumbnails' );	
+	add_theme_support( 'post-thumbnails' );
 	// add a hard cropped (for uniformity) image sizes for the products and posts
 	add_image_size( 'featured-img', 768, 450, true );
 	add_image_size( 'product-img', 540, 360, true );
@@ -105,13 +105,13 @@ function shoppette_scripts() {
 	else :
 		wp_enqueue_style( 'shoppette-design', get_template_directory_uri() . '/inc/assets/css/picnic.css' );
 	endif;
-	
+
 	// font awesome stylesheet
 	wp_enqueue_style( 'fontawesome', get_template_directory_uri() . '/inc/assets/fonts/font-awesome/css/font-awesome.min.css' );
-	
+
 	// Google fonts - Pacifico & Open Sans
 	wp_enqueue_style( 'googlefonts', 'http://fonts.googleapis.com/css?family=Pacifico|Open+Sans:400italic,700italic,400,700' );
-	
+
 	// theme assets
 	wp_enqueue_script( 'shoppette-navigation', get_template_directory_uri() . '/inc/assets/js/navigation.js', array(), '20120206', true );
 	wp_enqueue_script( 'shoppette-skip-link-focus-fix', get_template_directory_uri() . '/inc/assets/js/skip-link-focus-fix.js', array(), '20130115', true );
@@ -181,11 +181,11 @@ add_filter( 'post_class', 'shoppette_first_post_class' );
  */
 function shoppette_edd_add_comments_support( $supports ) {
 	$supports[] = 'comments';
-	return $supports;	
+	return $supports;
 }
 add_filter( 'edd_download_supports', 'shoppette_edd_add_comments_support' );
 
-	
+
 /** ===============
  * No purchase button below download content
  */

@@ -4,7 +4,7 @@ Theme URI: https://easydigitaldownloads.com/
 Author: Sean Davis
 Author URI: http://seandavis.co
 Description: A beautiful, elegant, versatile theme for Easy Digital Downloads
-Version: 1.0.4
+Version: 1.0.5
 License: GNU General Public License
 License URI: license.txt
 Text Domain: shoppette
@@ -129,7 +129,7 @@ textarea {
 }
 h1, h2, h3, h4, h5, h6 {
 	clear: both;
-	font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+	font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
 	font-weight: 300;
 	line-height: 1.6em;
 	margin-bottom: .4em;
@@ -1025,8 +1025,8 @@ Plugin Support
 #secondary .edd_download_purchase_form .edd_price_options {
 	margin-bottom: 24px;
 }
-#edd-purchase-button, 
-.edd-submit, 
+#edd-purchase-button,
+.edd-submit,
 input[type=submit].edd-submit {
 	font-size: 16px;
 	border: none;
@@ -1103,43 +1103,43 @@ input[type=submit].edd-submit {
 	max-width: 700px;
 	min-height: 268px
 }
-#edd_user_history td, 
+#edd_user_history td,
 #edd_user_history th {
 	padding: 10px;
 }
 #edd_purchase_receipt,
-#edd_user_history { 
-	margin-bottom: 2em; 
+#edd_user_history {
+	margin-bottom: 2em;
 }
-.edd-confirmation-template .entry-content #edd_purchase_receipt thead th:first-child, 
-.edd-confirmation-template .entry-content #edd_purchase_receipt tbody td:first-child { 
-	padding: 15px 10px; 
-	border-width: 0 1px 0 0; 
+.edd-confirmation-template .entry-content #edd_purchase_receipt thead th:first-child,
+.edd-confirmation-template .entry-content #edd_purchase_receipt tbody td:first-child {
+	padding: 15px 10px;
+	border-width: 0 1px 0 0;
 }
 .edd-confirmation-template .entry-content #edd_purchase_receipt thead th:first-child,
 .edd-confirmation-template .entry-content #edd_purchase_receipt tbody tr:not(:last-child) td:first-child {
 	border-bottom-width: 1px;
 }
-.edd-confirmation-template .entry-content #edd_purchase_receipt thead th:last-child, 
-.edd-confirmation-template .entry-content #edd_purchase_receipt tbody td:last-child { 
-	padding: 15px 10px; 
-	border-width: 0 0 1px; 
+.edd-confirmation-template .entry-content #edd_purchase_receipt thead th:last-child,
+.edd-confirmation-template .entry-content #edd_purchase_receipt tbody td:last-child {
+	padding: 15px 10px;
+	border-width: 0 0 1px;
 }
 .edd-confirmation-template .entry-content #edd_purchase_receipt tbody tr:last-child td:last-child {
 	border-bottom-width: 0;
 }
-#edd_purchase_receipt_products { 
-	margin-bottom: 3em; 
+#edd_purchase_receipt_products {
+	margin-bottom: 3em;
 }
-#edd_purchase_receipt_products th { 
-	font-weight: bold; 
-	padding: 15px 10px; 
+#edd_purchase_receipt_products th {
+	font-weight: bold;
+	padding: 15px 10px;
 }
-.entry-content #edd_purchase_receipt_products tbody td { 
-	border-width: 0 0 1px; 
+.entry-content #edd_purchase_receipt_products tbody td {
+	border-width: 0 0 1px;
 }
-#edd_purchase_receipt_products td { 
-	padding: 15px 10px; 
+#edd_purchase_receipt_products td {
+	padding: 15px 10px;
 }
 #edd_profile_editor_form {
 	padding: 16px;
@@ -1150,7 +1150,7 @@ input[type=submit].edd-submit {
 	margin-bottom: 10px;
 }
 #edd_profile_editor_form p > input:not([type="submit"]),
-#edd_profile_editor_form p > select, 
+#edd_profile_editor_form p > select,
 #edd_profile_editor_form p {
 	margin-bottom: 1em;
 }
@@ -1177,23 +1177,23 @@ input[type=submit].edd-submit {
 	background: none;
 }
 #edd_checkout_cart .edd_cart_header_row th,
-#edd_checkout_form_wrap #edd-discount-code-wrap, 
-#edd_checkout_form_wrap #edd-login-account-wrap, 
-#edd_checkout_form_wrap #edd-new-account-wrap, 
-#edd_checkout_form_wrap #edd_final_total_wrap, 
+#edd_checkout_form_wrap #edd-discount-code-wrap,
+#edd_checkout_form_wrap #edd-login-account-wrap,
+#edd_checkout_form_wrap #edd-new-account-wrap,
+#edd_checkout_form_wrap #edd_final_total_wrap,
 #edd_checkout_form_wrap #edd_show_discount,
-.edd-confirmation-template #edd_purchase_receipt thead th:first-child, 
-.edd-confirmation-template #edd_purchase_receipt tbody td:first-child, 
+.edd-confirmation-template #edd_purchase_receipt thead th:first-child,
+.edd-confirmation-template #edd_purchase_receipt tbody td:first-child,
 #edd_purchase_receipt_products th,
 #edd_profile_editor_form,
 #edd_checkout_form_wrap fieldset:not(#edd_purchase_submit),
 #edd_login_form {
 	background: #F5F5F5;
 }
-#edd_checkout_form_wrap #edd-discount-code-wrap, 
-#edd_checkout_form_wrap #edd-login-account-wrap, 
-#edd_checkout_form_wrap #edd-new-account-wrap, 
-#edd_checkout_form_wrap #edd_final_total_wrap, 
+#edd_checkout_form_wrap #edd-discount-code-wrap,
+#edd_checkout_form_wrap #edd-login-account-wrap,
+#edd_checkout_form_wrap #edd-new-account-wrap,
+#edd_checkout_form_wrap #edd_final_total_wrap,
 #edd_checkout_form_wrap #edd_show_discount,
 #edd_checkout_form_wrap fieldset,
 #edd_login_form,
@@ -1203,19 +1203,19 @@ input[type=submit].edd-submit {
 #edd_profile_editor_form,
 #bbpress-forums fieldset.bbp-form,
 #bbpress-forums div.wp-editor-container,#edd_checkout_cart_form,
-.edd-confirmation-template #edd_purchase_receipt thead th:first-child, 
+.edd-confirmation-template #edd_purchase_receipt thead th:first-child,
 .edd-confirmation-template #edd_purchase_receipt tbody td:first-child,
-.edd-confirmation-template #edd_purchase_receipt thead th:last-child, 
+.edd-confirmation-template #edd_purchase_receipt thead th:last-child,
 .edd-confirmation-template #edd_purchase_receipt tbody td:last-child,
 #edd_purchase_receipt_products tbody td {
 	border: 1px solid #f1f1f1;
 }
-#edd_purchase_receipt_products th { 
-	border-bottom: 1px solid #f1f1f1; 
+#edd_purchase_receipt_products th {
+	border-bottom: 1px solid #f1f1f1;
 }
-#edd_checkout_cart td, 
+#edd_checkout_cart td,
 #edd_checkout_cart th {
-	border-color: #f1f1f1; 
+	border-color: #f1f1f1;
 }
 .edd_download_purchase_form .edd_download_quantity_wrapper {
 	margin: 6px 0;
@@ -1302,7 +1302,7 @@ Responsive
 	}
 	.header-area .main-navigation ul li:hover > ul {
 		background: none;
-	} 
+	}
 	#primary,
 	#secondary {
 		float: none;

@@ -157,7 +157,7 @@ class SHOPPETTE_SL_Theme_Updater {
 if ( is_admin() ) {
 	$shoppette_license = trim( get_option( 'shoppette_license_key' ) );
 
-	$shoppette_updater = new SHOPPETTE_SL_Theme_Updater( array( 
+	$shoppette_updater = new SHOPPETTE_SL_Theme_Updater( array(
 			'remote_api_url' 	=> SHOPPETTE_SL_STORE_URL,
 			'version' 			=> SHOPPETTE_VERSION,
 			'license' 			=> $shoppette_license,
@@ -188,12 +188,12 @@ function shoppette_license_page() {
 	<div class="wrap">
 		<h2><?php echo SHOPPETTE_NAME . __( ' Settings', 'shoppette' ); ?></h2>
 		<form method="post" action="options.php">
-		
+
 			<?php settings_fields('shoppette_license'); ?>
-			
+
 			<table class="form-table">
 				<tbody>
-					<tr valign="top">	
+					<tr valign="top">
 						<th scope="row" valign="top">
 							<?php _e('License Key', 'shoppette'); ?>
 						</th>
@@ -203,7 +203,7 @@ function shoppette_license_page() {
 						</td>
 					</tr>
 					<?php if( false !== $license ) { ?>
-						<tr valign="top">	
+						<tr valign="top">
 							<th scope="row" valign="top">
 								<?php _e('Activate License', 'shoppette'); ?>
 							</th>
@@ -220,9 +220,9 @@ function shoppette_license_page() {
 						</tr>
 					<?php } ?>
 				</tbody>
-			</table>	
+			</table>
 			<?php submit_button(); ?>
-		
+
 		</form>
 	<?php
 }
@@ -254,22 +254,22 @@ function shoppette_sanitize_license( $new ) {
 
 function shoppette_activate_license() {
 
-	if( isset( $_POST['shoppette_license_activate'] ) ) { 
-	 	if( ! check_admin_referer( 'shoppette_nonce', 'shoppette_nonce' ) ) 	
+	if( isset( $_POST['shoppette_license_activate'] ) ) {
+	 	if( ! check_admin_referer( 'shoppette_nonce', 'shoppette_nonce' ) )
 			return; // get out if we didn't click the Activate button
 
 		global $wp_version;
 
 		$license = trim( get_option( 'shoppette_license_key' ) );
 
-		$api_params = array( 
-			'edd_action'	=> 'activate_license', 
-			'license'		=> $license, 
+		$api_params = array(
+			'edd_action'	=> 'activate_license',
+			'license'		=> $license,
 			'item_name'		=> urlencode( SHOPPETTE_DOWNLOAD_TITLE ),
-			'url'			=> home_url() 
+			'url'			=> home_url()
 		);
 
-		$response = wp_remote_get( add_query_arg( $api_params, SHOPPETTE_SL_STORE_URL ), array( 'timeout' => 15, 'sslverify' => false ) );
+		$response = wp_remote_get( esc_url( add_query_arg( $api_params, SHOPPETTE_SL_STORE_URL ) ), array( 'timeout' => 15, 'sslverify' => false ) );
 
 		if ( is_wp_error( $response ) )
 			return false;
@@ -294,8 +294,8 @@ function shoppette_deactivate_license() {
 	// listen for our activate button to be clicked
 	if( isset( $_POST['shoppette_license_deactivate'] ) ) {
 
-		// run a quick security check 
-	 	if( ! check_admin_referer( 'shoppette_nonce', 'shoppette_nonce' ) ) 	
+		// run a quick security check
+	 	if( ! check_admin_referer( 'shoppette_nonce', 'shoppette_nonce' ) )
 			return; // get out if we didn't click the Activate button
 
 		// retrieve the license from the database
@@ -303,15 +303,15 @@ function shoppette_deactivate_license() {
 
 
 		// data to send in our API request
-		$api_params = array( 
-			'edd_action'=> 'deactivate_license', 
-			'license' 	=> $license, 
+		$api_params = array(
+			'edd_action'=> 'deactivate_license',
+			'license' 	=> $license,
 			'item_name' => urlencode( SHOPPETTE_DOWNLOAD_TITLE ),
 			'url'       => home_url()
 		);
 
 		// Call the custom API.
-		$response = wp_remote_get( add_query_arg( $api_params, SHOPPETTE_SL_STORE_URL ), array( 'timeout' => 15, 'sslverify' => false ) );
+		$response = wp_remote_get( esc_url( add_query_arg( $api_params, SHOPPETTE_SL_STORE_URL ) ), array( 'timeout' => 15, 'sslverify' => false ) );
 
 		// make sure the response came back okay
 		if ( is_wp_error( $response ) )
