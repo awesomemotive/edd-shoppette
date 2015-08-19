@@ -280,14 +280,6 @@ function shoppette_customize_register( $wp_customize ) {
 		) );
 	}
 	
-
-	/** ===============
-	 * Navigation Menu(s)
-	 */
-	// section adjustments
-	$wp_customize->get_section( 'nav' )->title = __( 'Navigation Menu(s)', 'shoppette' );
-	$wp_customize->get_section( 'nav' )->priority = 40;
-	
 	
 
 	/** ===============
