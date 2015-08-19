@@ -7,19 +7,30 @@
 ?>
 
 <div id="store-front">
-<?php if ( have_posts() ) : $i = 1; ?>
-	<?php if ( get_theme_mod( 'shoppette_edd_store_archives_title' ) || get_theme_mod( 'shoppette_edd_store_archives_description' ) ) : ?>
+<?php if ( have_posts() ) : $i = 1;
+	if ( is_tax( 'download_category' ) || is_tax( 'download_tag' ) ) {
+		$download_term = $wp_query->get_queried_object();
+
+		if ( 'download_category' === $download_term->taxonomy ) {
+			$term_type = _x( 'Category', 'download category archive page title', 'shoppette' ) . ': ';
+		} elseif ( 'download_tag' === $download_term->taxonomy ) {
+			$term_type = _x( 'Tag', 'download tag archive page title', 'shoppette' ) . ': ';
+		}
+
+		if ( ! empty( $term_type ) ) {
+		?>
 		<div class="store-info">
-			<?php if ( get_theme_mod( 'shoppette_edd_store_archives_title' ) ) : ?>
-				<h1 class="store-title"><?php echo get_theme_mod( 'shoppette_edd_store_archives_title' ); ?></h1>
-			<?php endif; ?>
-			<?php if ( get_theme_mod( 'shoppette_edd_store_archives_description' ) ) : ?>
+			<h1 class="store-title"><?php echo $term_type; ?><strong><?php echo $download_term->name; ?></strong></h1>
+			<?php if ( ! empty( $download_term->description ) ) { ?>
 				<div class="store-description">
-					<?php echo wpautop( get_theme_mod( 'shoppette_edd_store_archives_description' ) ); ?>
+					<p><?php echo $download_term->description; ?></p>
 				</div>
-			<?php endif; ?>
+			<?php } ?>
 		</div>
-	<?php endif; ?>
+		<?php
+		}
+	}
+	?>
 	<div class="product-grid clear">
 		<?php while ( have_posts() ) : the_post(); ?>
 			
