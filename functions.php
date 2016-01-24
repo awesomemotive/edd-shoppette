@@ -7,7 +7,9 @@
  * definitions
  */
 define( 'SHOPPETTE_NAME', 'Shoppette' );
+define( 'SHOPPETTE_AUTHOR', 'Sean Davis' );
 define( 'SHOPPETTE_VERSION', '1.0.6' );
+define( 'SHOPPETTE_HOME', 'https://easydigitaldownloads.com' );
 
 
 if ( ! function_exists( 'shoppette_setup' ) ) :
@@ -113,8 +115,8 @@ function shoppette_scripts() {
 	wp_enqueue_style( 'googlefonts', 'http://fonts.googleapis.com/css?family=Pacifico|Open+Sans:400italic,700italic,400,700' );
 
 	// theme assets
-	wp_enqueue_script( 'shoppette-navigation', get_template_directory_uri() . '/inc/assets/js/navigation.js', array(), '20120206', true );
-	wp_enqueue_script( 'shoppette-skip-link-focus-fix', get_template_directory_uri() . '/inc/assets/js/skip-link-focus-fix.js', array(), '20130115', true );
+	wp_enqueue_script( 'shoppette-navigation', get_template_directory_uri() . '/inc/assets/js/navigation.js', array(), SHOPPETTE_VERSION, true );
+	wp_enqueue_script( 'shoppette-skip-link-focus-fix', get_template_directory_uri() . '/inc/assets/js/skip-link-focus-fix.js', array(), SHOPPETTE_VERSION, true );
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
@@ -139,7 +141,7 @@ require get_template_directory() . '/inc/customizer.php';
 /**
  * Theme updater.
  */
-require get_template_directory() . '/inc/updater.php';
+require get_template_directory() . '/inc/updater/theme-updater.php';
 
 
 /** ===============
