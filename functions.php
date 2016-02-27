@@ -7,8 +7,8 @@
  * definitions
  */
 define( 'SHOPPETTE_NAME', 'Shoppette' );
-define( 'SHOPPETTE_AUTHOR', 'Sean Davis' );
-define( 'SHOPPETTE_VERSION', '1.0.7' );
+define( 'SHOPPETTE_AUTHOR', 'EDD Team' );
+define( 'SHOPPETTE_VERSION', '1.0.8' );
 define( 'SHOPPETTE_HOME', 'https://easydigitaldownloads.com' );
 
 
