@@ -1021,7 +1021,8 @@ Plugin Support
 }
 #secondary .edd_download_purchase_form li:not(:last-child) {
 	padding-bottom: 10px;
-	border-bottom: 0;
+	border-bottom: 2px solid #f5f5f5;
+	margin-bottom: 10px;
 }
 .edd_download_purchase_form li:before,
 #secondary .widget_edd_cart_widget li:before {
@@ -1244,6 +1245,28 @@ input[type=submit].edd-submit {
 	width: 60px;
 	padding: 6px;
 	font-size: 80%;
+}
+
+/* Recurring Payments */
+.eddr-notice {
+	text-align: left;
+}
+.widget .eddr-notice:only-of-type {
+	margin-top: 10px;
+}
+.widget .eddr-notice:not(:only-of-type):first-of-type {
+	margin-top: 10px;
+}
+
+/* Variable Pricing Descriptions */
+.edd-variable-pricing-desc:not(:empty) {
+	background: #f5f5f5;
+	padding: 10px;
+	border-radius: 4px;
+	margin: 10px 0;
+}
+.edd-variable-pricing-desc:empty {
+	margin-bottom: 0;
 }
 
 
