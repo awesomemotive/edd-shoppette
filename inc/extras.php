@@ -2,7 +2,8 @@
 /**
  * menu fallback
  */
-function shoppette_menu_fallback() { ?>
+function shoppette_menu_fallback() {
+	?>
 	<div class="menu-edd-pages-container">
 		<ul id="menu-edd-pages" class="menu nav-menu">
 			<li id="menu-item-3679" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3679">
@@ -10,7 +11,27 @@ function shoppette_menu_fallback() { ?>
 			</li>
 		</ul>
 	</div>
-<?php }
+	<?php
+}
+
+
+/**
+ * Removes Page Templates from Add/Edit Page screen based on plugin activation
+ *
+ * @return array
+ */
+function shoppette_page_template_conditions( $page_templates ) {
+	if ( ! shoppette_edd_is_activated() ) {
+		unset( $page_templates['edd_templates/edd-checkout.php'] );
+		unset( $page_templates['edd_templates/edd-confirmation.php'] );
+		unset( $page_templates['edd_templates/edd-failed.php'] );
+		unset( $page_templates['edd_templates/edd-history.php'] );
+		unset( $page_templates['edd_templates/edd-members.php'] );
+		unset( $page_templates['edd_templates/edd-store-front.php'] );
+	}
+	return $page_templates;
+}
+add_filter( 'theme_page_templates', 'shoppette_page_template_conditions' );
 
 
 /**
@@ -24,22 +45,28 @@ function shoppette_body_classes( $classes ) {
 	if ( is_multi_author() ) {
 		$classes[] = 'group-blog';
 	}
-	
-	if ( is_page_template( 'edd_templates/edd-store-front.php' ) ) {		
+
+	if ( is_page_template( 'edd_templates/edd-store-front.php' ) ) {
 		$classes[] = 'edd-store-front-template edd-template';
-	} elseif ( is_page_template( 'edd_templates/edd-checkout.php' ) ) {		
-		$classes[] = 'edd-checkout-template edd-template';	
-	} elseif ( is_page_template( 'edd_templates/edd-confirmation.php' ) ) {		
+	} elseif ( is_page_template( 'edd_templates/edd-checkout.php' ) ) {
+		$classes[] = 'edd-checkout-template edd-template';
+	} elseif ( is_page_template( 'edd_templates/edd-confirmation.php' ) ) {
 		$classes[] = 'edd-confirmation-template edd-template';
-	} elseif ( is_page_template( 'edd_templates/edd-history.php' ) ) {		
+	} elseif ( is_page_template( 'edd_templates/edd-history.php' ) ) {
 		$classes[] = 'edd-history-template edd-template';
-	} elseif ( is_page_template( 'edd_templates/edd-members.php' ) ) {		
+	} elseif ( is_page_template( 'edd_templates/edd-members.php' ) ) {
 		$classes[] = 'edd-members-template edd-template';
-	} elseif ( is_page_template( 'edd_templates/edd-failed.php' ) ) {	
-		$classes[] = 'edd-failed-template edd-template';				
+	} elseif ( is_page_template( 'edd_templates/edd-failed.php' ) ) {
+		$classes[] = 'edd-failed-template edd-template';
+	} elseif ( is_page_template( 'edd_templates/focus.php' ) ) {
+		$classes[] = 'focus-template edd-template';
+	} elseif ( is_page_template( 'edd_templates/full-width.php' ) ) {
+		$classes[] = 'full-width-template edd-template';
+	} elseif ( is_page_template( 'edd_templates/landing.php' ) ) {
+		$classes[] = 'landing-template edd-template';
 	}
-	
-	if ( get_theme_mod( 'shoppette_layout' ) == 'cs' ) {	
+
+	if ( get_theme_mod( 'shoppette_layout' ) == 'cs' ) {
 		$classes[] = 'content-sidebar';
 	}
 

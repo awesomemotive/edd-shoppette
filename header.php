@@ -33,29 +33,33 @@ $ping = get_bloginfo('pingback_url');
 								<?php echo $title; ?>
 							</a>
 						<?php endif; ?>
-					</span>		
-					<nav id="header-navigation" class="header-menu" role="navigation">
-						<?php wp_nav_menu( array( 'theme_location' => 'header', 'fallback_cb' => 'shoppette_menu_fallback' ) ); ?>
-					</nav>
+					</span>
+					<?php if ( ! is_page_template( 'edd_templates/landing.php' ) ) : ?>
+						<nav id="header-navigation" class="header-menu" role="navigation">
+							<?php wp_nav_menu( array( 'theme_location' => 'header', 'fallback_cb' => 'shoppette_menu_fallback' ) ); ?>
+						</nav>
+					<?php endif; ?>
 				</div>
 			</header>
-			<div class="main-menu-container">
-				<nav id="site-navigation" class="main-navigation clear" role="navigation">
-					<span class="menu-toggle"><?php echo '<i class="fa fa-bars"></i> ' . __( 'Menu', 'shoppette' ); ?></span>
-					<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'shoppette' ); ?></a>
-		
-					<?php wp_nav_menu( array( 'theme_location' => 'primary', 'fallback_cb' => 'shoppette_menu_fallback' ) ); ?>
-				</nav>
-			</div>
+			<?php if ( ! is_page_template( 'edd_templates/landing.php' ) ) : ?>
+				<div class="main-menu-container">
+					<nav id="site-navigation" class="main-navigation clear" role="navigation">
+						<span class="menu-toggle"><?php echo '<i class="fa fa-bars"></i> ' . __( 'Menu', 'shoppette' ); ?></span>
+						<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'shoppette' ); ?></a>
+
+						<?php wp_nav_menu( array( 'theme_location' => 'primary', 'fallback_cb' => 'shoppette_menu_fallback' ) ); ?>
+					</nav>
+				</div>
+			<?php endif; ?>
 		</div>
 	</div>
 
 	<div class="main-content-area full">
 		<div class="main">
-			<div id="content" class="site-content inner">			
-				<?php 
+			<div id="content" class="site-content inner">
+				<?php
 					// only call the alert bar template if we're on the appropriate page and the option is selected
 					if ( ! is_archive( 'download' ) && ! is_page_template( 'edd_templates/edd-checkout.php' ) && ! is_page_template( 'edd_templates/edd-store-front.php' ) && get_theme_mod( 'shoppette_alert_bar' ) == 1 ) :
 						get_template_part( 'content/content', 'alert-bar' );
-					endif;	
+					endif;
 				?>

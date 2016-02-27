@@ -553,6 +553,9 @@ Header
 .site-header.inner {
 	padding: 0;
 }
+.landing-template .site-header {
+	text-align: center;
+}
 .header-elements {
 	padding: 32px 0;
 }
@@ -903,6 +906,9 @@ Footer
 	color: #999;
 	font-size: 13px;
 }
+.landing-template .site-footer {
+	text-align: center;
+}
 
 
 /*--------------------------------------------------------------
@@ -1094,7 +1100,9 @@ input[type=submit].edd-submit {
 .edd-history-template #content,
 .edd-confirmation-template #content,
 .edd-members-template #content,
-.edd-failed-template #content {
+.edd-failed-template #content,
+.focus-template #content,
+.landing-template #content {
 	margin: 0 auto;
 	max-width: 700px;
 }

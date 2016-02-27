@@ -124,6 +124,11 @@ function shoppette_scripts() {
 add_action( 'wp_enqueue_scripts', 'shoppette_scripts' );
 
 /**
+ * Custom conditional tags for this theme.
+ */
+require get_template_directory() . '/inc/conditional-tags.php';
+
+/**
  * Custom template tags for this theme.
  */
 require get_template_directory() . '/inc/template-tags.php';
