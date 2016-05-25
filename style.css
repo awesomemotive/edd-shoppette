@@ -1219,6 +1219,9 @@ input[type=submit].edd-submit {
 #edd_purchase_receipt_products tbody td {
 	border: 1px solid #f1f1f1;
 }
+#edd_checkout_form_wrap legend {
+	display: inline-block;
+}
 #edd_purchase_receipt_products th {
 	border-bottom: 1px solid #f1f1f1;
 }
