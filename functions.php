@@ -8,7 +8,7 @@
  */
 define( 'SHOPPETTE_NAME', 'Shoppette' );
 define( 'SHOPPETTE_AUTHOR', 'EDD Team' );
-define( 'SHOPPETTE_VERSION', '1.0.8' );
+define( 'SHOPPETTE_VERSION', '1.0.9' );
 define( 'SHOPPETTE_HOME', 'https://easydigitaldownloads.com' );
 
 
