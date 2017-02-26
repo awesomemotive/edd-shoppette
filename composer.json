@@ -1,0 +1,17 @@
+{
+	"name": "easydigitaldownloads/shoppette",
+	"type": "wordpress-theme",
+	"description": "A beautiful, elegant, versatile theme for Easy Digital Downloads.",
+	"keywords": [ "edd", "theme", "shoppette" ],
+	"homepage": "https://easydigitaldownloads.com/themes/shoppette/",
+	"authors": [
+		{
+			"name": "Sean Davis",
+			"email": "sean@sdavismedia.com",
+			"homepage": "http://sdavismedia.com"
+		}
+	],
+	"require": {
+		"composer/installers": "~1.0.6"
+	}
+}
